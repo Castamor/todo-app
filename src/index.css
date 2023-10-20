@@ -1,0 +1,244 @@
+/* == Plantilla CSS == */
+:root {
+    --primario: #3b82f6;
+    --fondo: #00081b;
+    --texto: #cbd5e1;
+    --cartaFondo: #171a1f;
+    --cartaBorde: #1e293b;
+    --tareaFondo: #2e3035;
+    --tareaFondoOscuro: #24262d;
+    --rojo: #c50000;
+    --fuente: 'Outfit', sans-serif;
+    color-scheme: dark;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--texto);
+    font-size: 1.6rem;
+    background-color: var(--fondo);
+    font-family: var(--fuente);
+    color-scheme: dark;
+}
+
+body.light {
+    --texto: #141414;
+    --fondo: #dce8ff;
+    --cartaFondo: #f1f7ff;
+    --cartaBorde: #bdd6ff;
+    --tareaFondo: #e6edff;
+    --tareaFondoOscuro: #c7d7ff;
+    color-scheme: light;
+}
+
+button, input {
+    font-family: var(--fuente);
+    border: none;
+}
+
+input[type='checkbox'] {display: none;}
+
+.contenedor {
+    width: min(90%, 55rem);
+    margin: 0 auto;
+}
+
+.carta {
+    margin: 5rem 0;
+    padding: 2.5rem;
+
+    border: .5rem solid var(--cartaBorde);
+    background-color: var(--cartaFondo);
+    border-radius: 1rem;
+}
+
+.plantilla {
+    display: flex;
+    background-color: var(--tareaFondo);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.header h1 {
+    line-height: 1;
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.header h1 span {
+    color: var(--primario);
+}
+
+.header h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.tema {
+    position: absolute;
+    font-size: 2rem;
+    top: 0;
+    right: 0;
+    padding: .3rem;
+    border-radius: 25%;
+    color: var(--primario);
+    background-color: var(--cartaBorde);
+
+    display: grid;
+    place-items: center;
+}
+
+.fondo-tarea {
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 1.6rem 0;
+    background-color: transparent;
+}
+
+.boton {
+    min-width: 4rem;
+    color: var(--primario);
+    background-color: transparent;
+
+    display: grid;
+    place-items: center;
+}
+
+.input {
+    margin-top: 1rem;
+    position: relative;
+}
+
+.input input {
+    padding-left: 2rem;
+}
+
+.plus {
+    font-size: 2.25rem;
+}
+
+.basura {
+    font-size: 1.75rem;
+    color: var(--rojo);
+
+    display: grid;
+    place-items: center;
+}
+
+.error {
+    color: var(--rojo);
+    font-size: 1.1rem;
+    margin-top: .2rem;
+    position: absolute;
+    font-weight: 500;
+}
+
+.check {
+    font-size: 2rem;
+    color: var(--primario);
+    
+    display: grid;
+    place-items: center;
+}
+
+.editar {
+    color: var(--texto);
+    opacity: .1;
+    font-size: 1.80rem;
+}
+
+.parteAbajo-contenedor {
+    position: relative;
+}
+
+.parteAbajo-titulo {
+    margin: 3rem 0 1rem;
+}
+
+.parteAbajo-boton {
+    position: absolute;
+    background-color: transparent;
+    opacity: .5;
+    font-size: 1.7rem;
+    padding: .2rem;
+    top: 63%;
+    right: -2.05rem;
+    transform: translate(-50%,-50%);
+}
+
+#input-orden:checked + .parteAbajo-boton {
+    opacity: 1;
+}
+
+.parteAbajo-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.titulo {
+    width: 100%;
+}
+
+.subdrayado {
+    text-decoration: line-through;
+}
+
+.negrita {
+    font-weight: 500;
+}
+
+@media (hover: hover) {
+
+    .tema {
+        cursor: pointer;
+    }
+    
+    .apuntar {
+        cursor: pointer;
+    }
+
+    .agarrar {
+        cursor: grab;
+    }
+
+    .parteAbajo-boton {
+        cursor: pointer;
+    }
+
+    .hover:hover {
+        background-color: var(--tareaFondoOscuro);
+    }
+}
+
+.opacidad {
+    opacity: .5;
+}
+
+.noSeleccionar {
+    user-select: none;
+}
+
+.bordeOverflow {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
